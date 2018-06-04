@@ -5,12 +5,21 @@ It rejects actual subway stations if it makes one by mistake.
 
 It posts every 6 hours [@fake_nyc_subway](https://www.twitter.com/fake_nyc_subway)
 
+## To run:
+Clone the repo and create a file called secret.py alongside bot.py with the following contents:
+
+    consumer_key = 'XXX'
+    consumer_secret = 'XXX'
+    access_token = 'XXX'
+    access_secret = 'XXX'
+
+Then run bot.py
+
 ## Acknowledgements
 * Based a bit on the simple code that governs my first twitter bot, [@drydernicknames](https://github.com/heavyimage/DRyderNicknames)
 * Inspired by [@sametomorrow's](https://www.twitter.com/sametomorrow) amazing [subway station tile resource](http://nytrainproject.com/)
 
 ## TODO
-
 * Create more variations by using other nyc-central sources of content
     * Add in famous recent New Yorkers worthy of a station stop!
     * Add more NYC-y place names that actually don't have subway stations
