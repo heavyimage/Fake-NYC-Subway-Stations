@@ -1,9 +1,10 @@
 ## Fake NYC Subway Station bot
 
-This code is for a twitter bot that makes me fake NYC subway stations by shufffling real NYC stations / locations around.
+A twitter bot that makes up fake NYC subway stations / service advisories by shufffling real NYC stations / locations around.
+
 It rejects actual subway stations if it makes one by mistake.
 
-It posts every 6 hours [@fake_nyc_subway](https://www.twitter.com/fake_nyc_subway)
+It posts every few hours [@fake_nyc_subway](https://www.twitter.com/fake_nyc_subway)
 
 ## To run:
 Clone the repo and create a file called secret.py alongside bot.py with the following contents:
