@@ -18,8 +18,13 @@ Then run bot.py
 ## Acknowledgements
 * Based a bit on the simple code that governs my first twitter bot, [@drydernicknames](https://github.com/heavyimage/DRyderNicknames)
 * Inspired by [@sametomorrow's](https://www.twitter.com/sametomorrow) amazing [subway station tile resource](http://nytrainproject.com/)
+* I used the excellent [tweep dumper](https://gist.github.com/yanofsky/5436496) to download a bunch of [@NYCTSubway](https://www.twitter.com/NYCTSubway)'s tweets to make fake sounding announcement tweets!
 
 ## TODO
+* Place arbitrary stations somewhere on a map somehow and figure out what trains might go there?
+* Figure out if a station is a terminus or not to aid in "XXX-bound YYY trains" etc.
+* A real goal for this project is to procedurally generate and render a tile mosaic of the supposed subway station featuring custom nyc subway-like art.
+    * I'm now tackling this is in another project for now; watch the skies.
 * Create more variations by using other nyc-central sources of content
     * Add in famous recent New Yorkers worthy of a station stop!
     * Add more NYC-y place names that actually don't have subway stations
@@ -36,64 +41,4 @@ Then run bot.py
         * <https://www.nycgo.com/articles/nyc-street-name-meanings>
         * <https://www.nytimes.com/2014/02/26/nyregion/honorific-streets-now-cataloged.html>
 
-    * Rendering support
-        * A real goal for this project is to procedurally generate and render a tile mosaic of the supposed subway station featuring custom nyc subway-like art.
 
-
-## Mosaic Rendering
-### Pipeline
-* Generate names
-    * Excecute name generation code in Blender or passin?
-    * Choose representation based on multiple sign conventions (fort --> ft; boulevard --> blvd.etc)
-* Decide some properties of the mosaiac
-    * age of "station"
-    * color scheme w/ variations
-        * inherit from original station options?
-        * 2 - 5 colors max but a "color" can have slight variantions in tiles of that color
-* Build scene:
-    * Create regionmap:
-        * block but not also ---____---- sorta stuff
-        * always mirrored on x, not nessisarily on y
-        * inner most region must fit stationname
-        * assign depth
-        * ??? clip corners of regionmap or join with others?
-        * Add tiny accent regions that are diamons or other shapes
-    * Create tiles within each region
-        * rules:
-            * outer tiles are either  4 3/8" x 4 3/8" or 6x3 (NOT ALWAYS WHITE but OFTEN)
-            * each inner tile region has an integer scale on tiles
-            * white text, white walls
-            * each tile should draw it's own grout
-            * clip tiles to region
-        * options:
-            * staggered tiles
-    * Color tiles:
-        * checkboard
-        * random w/ differnt weights
-        * solid colors
-    * Add name of station:
-        * cushing?
-    * "render" scene (2d image, layering regions)
-* Export tile positions
-* Geo generation
-    * varying depths?
-    * roundess?
-    * add materials to geo
-        * colors
-        * aged vs. shiny
-    * missing / damaged tiles?
-* Displace / warp geo
-* Render
-* Comp
-    * lens distortion?
-    * chromab
-    * instagram-esque filters?
-* Post on twitter
-
-### Resources
-* [Incredible NYC subway station tile resource](http://nytrainproject.com/)
-* [NYC Subway font analysis](https://www.aiga.org/the-mostly-true-story-of-helvetica-and-the-new-york-city-subway)
-* [Subway tile design resources](http://www.nysubwaymosaics.com/design.html)
-* [Tile Shading](https://www.youtube.com/watch?v=NDIZvJyMj1o)
-* [Procedural Tile Material](https://www.youtube.com/watch?v=PobPKHuX8pM)
-* [Dead Easy Tiles](https://www.youtube.com/watch?v=H-quCLfoHbk)
