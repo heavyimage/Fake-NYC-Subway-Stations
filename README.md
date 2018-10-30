@@ -6,6 +6,8 @@ It rejects actual subway stations if it makes one by mistake.
 
 It posts every few hours [@fake_nyc_subway](https://www.twitter.com/fake_nyc_subway)
 
+This project continues with my [MTA Tile Renderer](https://github.com/heavyimage/MTA-Tile-Renderer-Bot) bot project.
+
 ## To run:
 Clone the repo and create a file called secret.py alongside bot.py with the following contents:
 
