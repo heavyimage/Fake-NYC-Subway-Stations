@@ -481,7 +481,7 @@ class Template(object):
 
         # Don't mistakenly re-create a real place...
         if output in PLACES:
-            return self.substitute()
+            return None
 
         return output
 
@@ -572,8 +572,10 @@ def main():
     while True:
 
         # make
-        template = choice(templates)
-        station = template.substitute()
+        while True:
+            station = choice(templates).substitute()
+            if station is not None:
+                break
 
         # TODO: Representations -- used for mosaic generation later...
         # reps = template.representations(station)
@@ -604,8 +606,8 @@ def main():
         except tweepy.RateLimitError:
             logger.info("Exceeded rate limit searching for followers :-(")
 
-        # sleep for 6 hours
-        time.sleep(21600)
+        # sleep for 2 hours
+        time.sleep(7200)
 
 if __name__ == "__main__":
     main()
